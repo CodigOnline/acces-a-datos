@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Alumnos>
+    <Alumno edad="28" nombre="Alvaro">
+        <direccion>C/Falsa 1234</direccion>
+        <telefono>987654321</telefono>
+    </Alumno>
+</Alumnos>
