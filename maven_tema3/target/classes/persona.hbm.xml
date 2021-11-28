@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.codigonline.hb.entities.Persona" table="personas">
+        <id name="id" type="integer" column="id">
+            <generator class="identity"/>
+        </id>
+        <property name="nombre" column="nombre" type="string" length="50"/>
+        <property name="edad" column="edad" type="integer" />
+        <property name="fechaNacimiento" column="nacimiento" type="date" />
+        <many-to-one name="empresa" class="com.codigonline.hb.entities.Empresa">
+            <column name="empresa_id"/>
+        </many-to-one>
+        <set name="deportes" table="personas_deportes">
+            <key>
+                <column name="persona_id"/>
+            </key>
+            <many-to-many class="com.codigonline.hb.entities.Deporte">
+                <column name="deporte_id"/>
+            </many-to-many>
+        </set>
+
+    </class>
+</hibernate-mapping>
